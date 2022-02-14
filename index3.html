@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="topnav" id="myTopnav">
+        <a href="#contact">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+        <div class="logo">
+          <img src="images/elcicneha-logo-blue-noBG.png" alt="" />
+        </div>
+      </div>
+
+      <div class="container">
+        <div>
+          <h2 class="item1">WELCOME TO ELCICNEHA</h2>
+        </div>
+        <div>
+          <h1 class="item2">
+            We help companies and entrepreneurs build amazing experiences for
+            their users
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="Talk">
+      <div class="Talkc">
+        <h1 class="th1" data-aos="fade-up">
+          Ready to <span id="yellow" class="yellow-span">Talk?</span>
+        </h1>
+        <h5
+          class="th5"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-offset="200"
+        >
+          Want to make a bigger impact?
+        </h5>
+        <h5
+          class="th5"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-offset="200"
+        >
+          We'd love to help.
+        </h5>
+        <a
+          href="#"
+          class="button"
+          data-aos="fade-up"
+          data-aos-delay="700"
+          data-aos-offset="100"
+          >Contact us
+          <span>
+            <img
+              class="default"
+              src="https://jankelley.com/wp-content/themes/humanology/images/btn-arrow-white.png"
+            />
+            <img
+              class="hover"
+              src="https://jankelley.com/wp-content/themes/humanology/images/btn-arrow-black.png"
+            /> </span
+        ></a>
+      </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+            AOS.init({
+              offset: 300,
+              duration: 1000,
+            });
+            function myFunction() {
+              let x = document.getElementById("myTopnav");
+              if (x.className === "topnav") {
+                x.className += " responsive";
+              } else {
+                x.className = "topnav";
+              }
+            }
+
+            const cards = document.querySelector(".yellow-span");
+
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  entry.target.classList.toggle("yellow-ani", entry.isIntersecting);
+                });
+              },
+              {
+                threshold: 0.5,
+              }
+            );
+
+            observer.observe(cards);
+
+    </script>
+  </body>
+</html

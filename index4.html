@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style4.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item1">
+        <div class="grid-container1">
+          <div class="line"></div>
+          <div class="grid-item" id="gi1" data-aos="fade">
+            Let’s make things
+            <span class="yellow-span">happen </span>.
+          </div>
+          <div class="grid-item info" data-aos="fade-up">
+            1006 Skyview Drive,<br />
+            Suite 200, Burlington,<br />
+            Ontario L7P 0V1
+          </div>
+          <div class="grid-item info" data-aos="fade-up">
+            P: 800.461.7304 <br />
+            F: 905.632.6924 <br />
+            E: info@jankelley.com
+          </div>
+        </div>
+      </div>
+      <div class="grid-item2">
+        <div class="form" data-aos="fade-up">
+          <div class="form-heading">
+            Well, <span class="yellow-span">hello</span> there
+          </div>
+          <div class="grid-container2">
+            <div class="container">
+              <form
+                action="mailto:sidarthroy@yahoo.com"
+                method="post"
+                enctype="text/plain"
+              >
+                <div class="row">
+                  <div class="col-25">
+                    <label for="name">Name*</label>
+                  </div>
+                  <div class="col-75">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Your name.."
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="email">Email*</label>
+                  </div>
+                  <div class="col-75">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your Email ID"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="tel">Phone No.*</label>
+                  </div>
+                  <div class="col-75">
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="Phone No."
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="subject">Subject*</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea
+                      id="subject"
+                      name="subject"
+                      placeholder="Write Subject.."
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <input
+                    class="button"
+                    type="submit"
+                    value="Submit"
+                    id="submit"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 200,
+        duration: 2000,
+      });
+      const cards = document.querySelectorAll(".yellow-span");
+
+      let observer = new IntersectionObserver(                    //by keeping let as datatype of observer we can use more than 1 IntersectionObserver
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("yellow-ani", entry.isIntersecting);
+          });
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+      cards.forEach((card) => {
+        observer.observe(card);
+      });
+
+      const line = document.querySelector(".line");
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            entry.target.classList.toggle("line-ani", entry.isIntersecting);
+          });
+        },
+        {
+          threshold: 1,
+        }
+      );
+
+      observer.observe(line);
+    </script>
+  </body>
+</html>
